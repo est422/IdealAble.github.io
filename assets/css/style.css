@@ -390,10 +390,21 @@ h6 {
   /* border-bottom: 1px solid rgba(247, 240, 240, 0.1); */
 }
 
-#header.header-scrolled,
-#header.header-inner-pages {
-  /* background: rgba(242, 245, 248, 0.8); */
+#header {
+  /* background: #5cb874; */
+  transition: all 0.5s;
+  z-index: 997;
+  height: 70px;
 }
+
+#header.header-scrolled {
+  box-shadow: 0px 2px 15px rgba(253, 158, 103, 0.699);
+}
+
+#header.header-scrolled,
+/* #header.header-inner-pages {
+  background: rgba(255, 255, 255, 0.8);
+} */
 
 #header .logo {
   font-size: 30px;
@@ -1158,12 +1169,12 @@ section {
 }
 
 .about .content ul li {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .about .content ul i {
-  font-size: 20px;
-  padding-right: 4px;
+  font-size: 10px;
+  /* padding-right: 2px; */
   color: #5cb874;
 }
 
@@ -1220,7 +1231,7 @@ section {
 # Our Clients
 --------------------------------------------------------------*/
 .clients .swiper-slide img {
-  opacity: 0.5;
+  opacity: 1;
   transition: 0.3s;
 }
 
