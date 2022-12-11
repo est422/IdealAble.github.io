@@ -15,13 +15,24 @@
   //   die( 'Unable to load the "PHP Email Form" Library!');
   // }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
+  // $contact = new PHP_Email_Form;
+  // $contact->ajax = true;
   
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  // $contact->to = $receiving_email_address;
+  // $contact->from_name = $_POST['name'];
+  // $contact->from_email = $_POST['email'];
+  // $contact->subject = $_POST['subject'];
+
+  $to = $receiving_email_address;
+  $from_name = $_POST['name'];
+  $from_email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $headers = "From: $from_name <$from_email>\r\n".
+  "MIME-Version: 1.0" . "\r\n" .
+  "Content-type: text/html; charset=UTF-8" . "\r\n";
+
+  mail($to, $subject, $body, $headers);
+
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
