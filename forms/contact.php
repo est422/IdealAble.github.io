@@ -31,7 +31,7 @@
   "MIME-Version: 1.0" . "\r\n" .
   "Content-type: text/html; charset=UTF-8" . "\r\n";
 
-  mail($to, $subject, $body, $headers);
+  mail($to, $subject, $headers);
 
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
