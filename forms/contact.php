@@ -27,11 +27,18 @@
   $from_name = $_POST['name'];
   $from_email = $_POST['email'];
   $subject = $_POST['subject'];
-  $headers = "From: $from_name <$from_email>\r\n".
-  "MIME-Version: 1.0" . "\r\n" .
-  "Content-type: text/html; charset=UTF-8" . "\r\n";
+  $message = $_POST['message'];
+  $body = "";
 
-  mail($to, $subject, $headers);
+  $body .= "From: ".$from_name. "\r\n";
+  $body .= "Email: ".$from_email. "\r\n";
+  $body .= "Message: ".$message. "\r\n";
+
+  // $headers = "From: $from_name <$from_email>\r\n".
+  // "MIME-Version: 1.0" . "\r\n" .
+  // "Content-type: text/html; charset=UTF-8" . "\r\n";
+
+  mail($to, $subject, $body);
 
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
@@ -44,9 +51,9 @@
   );
   */
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 120);
+  // $contact->add_message( $_POST['name'], 'From');
+  // $contact->add_message( $_POST['email'], 'Email');
+  // $contact->add_message( $_POST['message'], 'Message', 120);
 
   echo $contact->send();
 ?>
